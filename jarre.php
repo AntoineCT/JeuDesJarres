@@ -66,7 +66,7 @@ while($cleTrouve < 3) {
         echo "Vous avez trouvé une clé !\n";
         $cleTrouve++;
     } elseif($jarres["jarre" . $choix] == "serpent") {
-        echo "Vous avez perdu ! ";
+        echo "Vous avez trouvé un serpent ! Vous avez perdu ! ";
         break;
     }
 }
