@@ -25,10 +25,19 @@ foreach($jarres as $cle => $jarre) {
     }
 }
 
-$choix = readline("Saisissez un numéro de jarre entre 1 et 5 : ");
+$cleTrouve = 0;
 
-if($jarres["jarre" . $choix] == "clé") {
-    echo "Vous avez gagné !";
-} elseif($jarres["jarre" . $choix] == "serpent") {
-    echo "Vous avez perdu ! ";
+while($cleTrouve < 3) {
+    $choix = readline("Saisissez un numéro de jarre entre 1 et 5 : ");
+    if($jarres["jarre" . $choix] == "clé") {
+        echo "Vous avez trouvé une clé !\n";
+        $cleTrouve++;
+    } elseif($jarres["jarre" . $choix] == "serpent") {
+        echo "Vous avez perdu ! ";
+        break;
+    }
+}
+
+if($cleTrouve == 3) { 
+    echo "Vous avez trouvé 3 clés ! Vous avez gagné ! ";
 }
